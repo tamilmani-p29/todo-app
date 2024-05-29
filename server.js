@@ -23,7 +23,7 @@ app.use(express.static(__dirname + '/static'));
 
 app.get("/todos", async (req, res) => {
   console.log("inside get users");
-  conn.query("SELECT * FROM todos-db.todostable", (err, result) => {
+  conn.query("SELECT * FROM todos.todos_list", (err, result) => {
     if(err) {
         res.status(422).json("No data available")
     } else {
